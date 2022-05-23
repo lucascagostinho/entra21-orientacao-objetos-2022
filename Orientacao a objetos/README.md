@@ -1,9 +1,8 @@
 # Object orientation
 
-> Object-oriented programming is a new way of building technology solutions by abstracting elements from the real world and translating them into the programming context.
+###### Object-oriented programming is a new way of building technology solutions by abstracting elements from the real world and translating them into the programming context.
 
-
-> In the real world, we have the habit of classifying everything based on characteristics:
+- In the real world, we have the habit of classifying everything based on characteristics:
 
 > - People: have name, height, weight, gender and age
 > - Animals: species, race, color, sex
