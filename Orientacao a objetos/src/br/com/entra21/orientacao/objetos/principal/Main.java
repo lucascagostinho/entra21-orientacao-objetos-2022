@@ -6,6 +6,9 @@ import br.com.entra21.orientacao.objetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Atleta;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Nadador;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Velocista;
 
 public class Main {
 
@@ -20,6 +23,7 @@ public class Main {
 			System.out.println("0 - Sair");
 			System.out.println("1 - Aprender Classes");
 			System.out.println("2 - Aprender Herança");
+			System.out.println("3 - Polimorfismo");
 			option = input.nextByte();
 
 			switch (option) {
@@ -34,6 +38,11 @@ public class Main {
 
 			case 2:
 				aprenderHeranca();
+
+				break;
+
+			case 3:
+				aprenderPolimorfismo();
 
 				break;
 
@@ -106,6 +115,34 @@ public class Main {
 
 		Diretor diretor4 = new Diretor("Teste", (byte) 15, "07428461995", "Teste", (byte) 2500);
 		diretor4.setObservacao("testte");
+
+	}
+
+	public static void aprenderPolimorfismo() {
+		// possuo esse método dentro de Atleta, com o o polimorfismo ele busca primeiro
+		// na classe, se não tiver, ele vai na herança
+		// comemorar vitoria já existe na super classe, mas se eu criar com mesmo nome e
+		// vizibilidade e tipo de reotnro e argumeentos
+		// o metodo excolhido será esse aqui e não o da super classe
+		// o padrão de polimorfismo é herdar, a segunda forma é fazer completamente do
+		// meu jeito, o que eu herdei
+		// a terceira forma do polimorfismo é aproveitar a minhba herança e fazer um diferencial
+		Atleta atleta1 = new Atleta();
+		atleta1.comemorarVitoria();
+		atleta1.aprenderComDerrota();
+
+		Nadador nadador1 = new Nadador("Mar", "Sunga");
+		nadador1.comemorarVitoria();
+		nadador1.aprenderComDerrota();
+		nadador1.setName("Lucas");
+
+		Nadador nadador2 = new Nadador("Lucas", (byte) 25, 5, 1, "Mar", "Bermuda");
+
+		Velocista velocista1 = new Velocista();
+		velocista1.setMarcaCalcado("Nike");
+		velocista1.setName("Forest");
+		velocista1.comemorarVitoria();
+		velocista1.aprenderComDerrota();
 
 	}
 
