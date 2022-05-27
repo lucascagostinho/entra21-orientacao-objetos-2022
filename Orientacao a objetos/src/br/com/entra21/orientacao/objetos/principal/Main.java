@@ -1,14 +1,25 @@
 package br.com.entra21.orientacao.objetos.principal;
 
+import java.awt.Panel;
 import java.util.Scanner;
 
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
 import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Atleta;
 import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Nadador;
 import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Velocista;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitospoo.Ponto;
+import br.com.entra21.orientacao.objetos.principal.aula04.conceitospoo.Reta;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Aviao;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Capivara;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Formiga;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Peixe;
+import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
 
 public class Main {
 
@@ -24,6 +35,8 @@ public class Main {
 			System.out.println("1 - Aprender Classes");
 			System.out.println("2 - Aprender Herança");
 			System.out.println("3 - Polimorfismo");
+			System.out.println("4 - Aprender conceitos POO");
+			System.out.println("5 - Aprender polimorfismo com interface");
 			option = input.nextByte();
 
 			switch (option) {
@@ -44,6 +57,14 @@ public class Main {
 			case 3:
 				aprenderPolimorfismo();
 
+				break;
+
+			case 4:
+				aprenderConceitosPoo();
+				break;
+
+			case 5:
+				aprenderPolimorfismoComInterface();
 				break;
 
 			default:
@@ -126,7 +147,8 @@ public class Main {
 		// o metodo excolhido será esse aqui e não o da super classe
 		// o padrão de polimorfismo é herdar, a segunda forma é fazer completamente do
 		// meu jeito, o que eu herdei
-		// a terceira forma do polimorfismo é aproveitar a minhba herança e fazer um diferencial
+		// a terceira forma do polimorfismo é aproveitar a minhba herança e fazer um
+		// diferencial
 		Atleta atleta1 = new Atleta();
 		atleta1.comemorarVitoria();
 		atleta1.aprenderComDerrota();
@@ -143,6 +165,70 @@ public class Main {
 		velocista1.setName("Forest");
 		velocista1.comemorarVitoria();
 		velocista1.aprenderComDerrota();
+
+	}
+
+	public static void aprenderConceitosPoo() {
+		// Coesão
+		// Coesão está ligado ao princípio da responsabilidade única, onde uma classe
+		// deve ter apenas uma única responsabilidade e realizá-la de maneira
+		// satisfatória, ou seja, uma classe não deve assumir responsabilidades que não
+		// são suas .
+		// Uma vez sendo ignorado este princípio, passamos a ter problemas, como
+		// dificuldades de manutenção e de reuso.
+		Ponto pontoAlto = new Ponto(30f, 10000f);
+		Ponto esquerdaBaixo = new Ponto(-20f, -100f);
+
+		// Agregação
+		// É uma forma especial de associação onde: É uma associação unidirecional, ou
+		// seja, um relacionamento de mão única. Por exemplo, o departamento pode ter
+		// alunos, mas vice-versa não é possível e, portanto, de natureza unidirecional.
+		// Na agregação, ambas as entradas podem sobreviver individualmente, o que
+		// significa
+		Reta torta = new Reta();
+		Reta retaDiagonal = new Reta(pontoAlto, esquerdaBaixo);
+
+	}
+
+	public static void aprenderPolimorfismoComInterface() {
+
+		Humano lucas = new Humano();
+		lucas.setNome("Lucas");
+		lucas.apresentarSe();
+		lucas.alimentar("Frango");
+		lucas.locomover();
+		lucas.comunicar("Viu só");
+
+		Gato gato = new Gato("Vicente", new Pessoa("Marcela", (byte) 21, ""));
+		gato.alimentar("Ração");
+		gato.comunicar("Quero ração");
+		gato.locomover();
+
+		Capivara capivara = new Capivara();
+		capivara.alimentar("Não sei");
+		capivara.comunicar("nem fala");
+		capivara.locomover();
+
+		Planta planta = new Planta();
+		planta.alimentar("nãosei");
+		planta.comunicar("nãosei");
+		planta.locomover();
+		
+		Formiga formiga = new Formiga();
+		formiga.alimentar("Tudo");
+		formiga.comunicar("ota");
+		formiga.locomover();
+		
+		Peixe peixe = new Peixe();
+		peixe.alimentar("Pão");
+		peixe.comunicar("Blupe");
+		peixe.locomover();
+		
+		Aviao aviao = new Aviao();
+		aviao.setModelo("Boeing 737");
+		System.out.println(aviao.getModelo() + aviao.freiar());
+		aviao.acelerar(870f);
+		
 
 	}
 
