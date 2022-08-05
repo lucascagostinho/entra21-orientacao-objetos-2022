@@ -1,14 +1,26 @@
-# Entra21 - Full Stack Course
+# Entra21 - Full stack Java Course ☕
 
-![Gif Entra21](/Gifs/entra21.gif)
+<center>
 
-## Practical content carried out in the classroom during the Entra21 project
+## ↪️ Object Oriented Programming ↩️
 
-## Object-oriented programming
+<br>
 
-| CLASS | SUBJECT |
-|------|---------|
-|Class 01 - 01|[Object oriented](./Orientacao%20a%20objetos/) 
+![Full stack Java course](OrientacaoAObjetos/gif_img/OOP.png)
+
+</center>
+
+## Practical Content ✍🏻
 
 
-## Exercises
+- [x] UML Class Diagram;
+- [x] Object;
+- [x] Class;
+- [x] Inheritance
+- [x] Polimorphism;
+- [x] Encapsulation;
+- [x] OOP Concepts (Coupling);
+- [x] OOP Concepts (Cohesion);
+- [x] OOP Concepts (Association);
+- [x] OOP Concepts (Aggregation);
+- [x] OOP Concepts (Composition);
